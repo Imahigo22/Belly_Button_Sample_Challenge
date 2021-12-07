@@ -71,25 +71,25 @@ function init() {
   
     // 6. Create variables that hold the otu_ids, otu_labels, and sample_values.
     
-    var otuIds = resultForSample.otu_ids
-    var otuIdsSliced = otuIds.slice(0,10).map(otuId => `OTU ${otuId}`).reverse();
-    console.log(otuIdsSliced)
+    var otu_ids = resultForSample.otu_ids
+    var otu_idsSliced = otu_ids.slice(0,10).map(otuId => `OTU ${otuId}`).reverse();
+    console.log(otu_idsSliced)
   
     
-    var otuLables = resultForSample.otu_labels;
-    var otuLablesSliced = otuLables.slice(0,10).reverse();
-    console.log(otuLablesSliced);
+    var otu_labels = resultForSample.otu_labels;
+    var otu_labelsSliced = otu_labels.slice(0,10).reverse();
+    console.log(otu_labelsSliced);
   
     
-    var sampleValues = resultForSample.sample_values;
-    var sampleValuesSliced = sampleValues.slice(0,10).reverse();
-    console.log(sampleValuesSliced);
+    var sample_values = resultForSample.sample_values;
+    var sample_valuesSliced = sample_values.slice(0,10).reverse();
+    console.log(sample_valuesSliced);
   
     // 8. Create the trace for the bar chart. 
     var barData = [{
-      x: sampleValuesSliced,
-      y: otuIdsSliced,
-      text: otuLablesSliced,
+      x: sample_valuesSliced,
+      y: otu_idsSliced,
+      text: otu_labelsSliced,
       type: "bar",
       orientation: 'h',
       marker: {
@@ -110,13 +110,13 @@ function init() {
   
     // 1. Create the trace for the bubble chart.
     var bubbleData = [{
-      x: otuIds,
-      y: sampleValues,
-      text: otuLables,
+      x: otu_ids,
+      y: sample_values,
+      text: otu_labels,
       mode: "markers",
       marker: {
-        size: sampleValues,
-        color: otuIds,
+        size: sample_values,
+        color: otu_ids,
         colorscale: 'RdBu',
       }
       
